@@ -3,10 +3,10 @@
 @attribute [StreamRendering];
 
 <PageTitle>Articles</PageTitle>
+<h3>Articles</h3>
 
 <a href="/article-editor" class="btn btn-primary">Create a new article</a>
 
-<h3>Articles</h3>
 
 @if(articles.Count == 0)
 {
@@ -19,6 +19,7 @@ else
         <h3>@article.Title</h3>
         <p>@article.Content</p>
         <small>@article.DatePublished</small>
+        <a href="/article-editor/@article.Id" >Edit article</a>
     }
 }
 
@@ -28,7 +29,7 @@ else
 
     protected override  async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
+        //await Task.Delay(2000);
 
         var result = await Sender.Send(new GetArticlesQuery());
 

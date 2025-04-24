@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazingBlog.Application.Articles.GetArticleById
+namespace BlazingBlog.Application.Articles.DeleteArticle
 {
-    public class GetArticleByIdQuery : IRequest<ArticleResponse?>
+    public class DeleteArticleCommand : IRequest<bool>
     {
         public int Id { get; set; }
-
     }
 }
